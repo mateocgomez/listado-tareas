@@ -15,27 +15,9 @@
 
 <body class="container animated jackInTheBox">
     <div id="app" class="jumbotron mt-4">
-        <h1>{{titulo}} 👨🏻‍💻</h1>
-        <div class="input-group">
-            <input @keyup.enter="agregarTarea" class="form-control" type="text" placeholder="Añadir la nueva tarea" v-model="nuevaTarea">
-            <span class="input-group-btn">
-                <button type="button" @click="agregarTarea()" class="btn btn-primary">Agregar tarea 💻  </button>
-            </span>
-        </div>
-        <ul class="list-group mt-4">
-            <li v-for="(tarea,indice) in tareas" class="list-group-item" :class="{terminada: tarea.terminada}">
-                {{tarea.texto}}
-                <span class="float-right">
-                    <button type="button" class="btn btn-xs btn-success "
-                    @click="tarea.terminada = !tarea.terminada"
-                    >👍🏼 </button>
-                    <span class="float-right">
-                        <button type="button" class="btn btn-xs btn-danger ml-3 "
-                        @click="borrar(indice)"
-                    >☠️ </button>
-                </span>
-            </li>
-        </ul>
+        <titulo></titulo>
+        <nueva-tarea></nueva-tarea>
+        <lista-tareas></lista-tareas>
     </div>
     <footer>
         <span>Desarrollado por <a href="https://github.com/mateocgomez">@mateocgomez</a> -  <a href="www.mateocgomez.github.io">Pagina de contacto</a></span>
